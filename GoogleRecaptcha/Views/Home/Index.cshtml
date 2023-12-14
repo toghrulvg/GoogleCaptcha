@@ -1,0 +1,36 @@
+﻿@model GoogleRecaptcha.Models.AppUser
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@using Microsoft.Extensions.Configuration
+@using Microsoft.Extensions.Options
+@using GoogleRecaptcha.Models
+
+@inject IOptions<GoogleCaptureConfig> GoogleCaptchaConfiggg;
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<h1>Google
+
+</h1>
+
+
+<form method="post" asp-action="Login" asp-controller="Home">
+    <input type="hidden" id="LoginVmID" asp-for="@Model.Token">
+
+     <label for="fname">First name:</label><br>
+    <input type="text" asp-for="@Model.Name"><br>
+     <label for="lname">Last name:</label><br>
+    <input type="text" asp-for="@Model.Password"><br><br>
+     <input type="submit" value="Submit">
+
+
+</form>
+
+
